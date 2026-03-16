@@ -3,8 +3,11 @@ import { colors } from './src/util/Colors';
 import { Conta } from './src/model/Conta';
 import { ContaCorrente } from './src/model/ContaCorrente';
 import { ContaPoupanca } from './src/model/ContaPoupanca';
+import { ContaController } from "./src/Controller/ContaController";
 
 export function main() {
+
+    let Contas: ContaController = new ContaController();
 
     let opcao: number;
     
@@ -73,6 +76,8 @@ export function main() {
             case 2:
                 console.log(colors.fg.whitestrong, "\n\nListar todas as Contas\n\n", colors.reset);
 
+                Contas.listarTodas();
+                
                 keyPress()
                 break;
             case 3:
